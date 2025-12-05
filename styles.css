@@ -8,6 +8,11 @@
   --border-color: #a8b7d3;
   --box-shadow-color: rgba(0, 0, 0, 0.3);
   --border-radius: 6px;
+  --input-padding: 12px;
+  --input-padding-right: 40px;
+  --input-font-size: 14px;
+  --error-border-color: #2f4bcb;
+  --error-bg-color: #fff5f5;
 }
 
 body {
@@ -178,14 +183,14 @@ label {
 
 .input-with-unit input[type="number"] {
   width: 100%;
-  padding: 12px;
-  padding-right: 40px;
+  padding: var(--input-padding) var(--input-padding-right) var(--input-padding) var(--input-padding);
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
-  font-size: 14px;
+  font-size: var(--input-font-size);
   box-sizing: border-box;
   color: #000;
   box-shadow: inset 0 2px 2px rgba(19, 20, 118, 0.1);
+  outline: none;
 }
 
 .input-with-unit input[type="number"]::-webkit-inner-spin-button,
@@ -195,40 +200,28 @@ label {
 }
 
 .input-with-unit input[type="number"]:focus {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
   border-color: var(--primary-color);
 }
 
-.input-with-unit input[type="number"]:focus:not(:focus-visible) {
-  outline: none;
-  border-color: #999;
-}
-
 .input-with-unit input[type="number"][aria-invalid="true"] {
-  border-color: #d72424;
-  background-color: #fff5f5;
-}
-
-.input-with-unit input[type="number"][aria-invalid="true"]:focus {
-  border-color: #d72424;
-  outline-color: #d72424;
+  border-color: var(--error-border-color);
+  background-color: var(--error-bg-color);
 }
 
 .input-with-unit span {
   position: absolute;
-  right: 12px;
+  right: var(--input-padding);
   top: 50%;
   transform: translateY(-50%);
-  font-size: 14px;
+  font-size: var(--input-font-size);
   font-weight: bold;
   color: var(--text-color);
   pointer-events: none;
 }
 
 .checkbox-wrapper input[type="checkbox"] {
-  -webkit-appearance: none;
   appearance: none;
+  -webkit-appearance: none;
   width: 18px;
   height: 18px;
   border: 2px solid var(--border-color);
@@ -237,14 +230,13 @@ label {
   box-shadow: inset 0 2px 2px rgba(19, 20, 118, 0.1);
   cursor: pointer;
   position: relative;
-  display: inline-block;
-  vertical-align: middle;
+  outline: none;
 }
 
 .checkbox-wrapper input[type="checkbox"]:checked::after {
   content: '';
   position: absolute;
-  top: 0px;
+  top: 0;
   left: 4px;
   width: 5px;
   height: 10px;
@@ -253,20 +245,10 @@ label {
   transform: rotate(45deg);
 }
 
-.checkbox-wrapper input[type="checkbox"]:focus {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
-}
-
-.checkbox-wrapper input[type="checkbox"]:focus:not(:focus-visible) {
-  outline: none;
-}
-
 .checkbox-wrapper label {
-  line-height: 1;
   margin: 0;
-  vertical-align: middle;
   display: inline-block;
+  vertical-align: middle;
 }
 
 button {

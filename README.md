@@ -1,31 +1,35 @@
 # Compensation Calculator
 
-A web application for calculating sick-leave health insurance compensation in Estonia.
+A web application that calculates sick-leave health insurance compensation, developed as part of a test assignment for a job position.
 
-## Features
+![Calculator Demo](./calculator-demo.gif)
 
-- Calculate employer compensation (days 4-8)
-- Calculate Health Insurance Fund compensation (from day 9)
-- Support for regular cases (max 182 days) and tuberculosis cases (max 240 days)
-- Real-time validation and error handling
-- Responsive design for all devices
-- Accessible and semantic HTML
+## Task Description
 
-## How It Works
+Backstory
 
-- **Employer Compensation**: Pays from the 4th to the 8th day of sick-leave
-- **Health Insurance Fund**: Pays from the 9th day onwards
-- **Compensation Rate**: 70% of monthly gross income
-- **Maximum Duration**: 
-  - Regular cases: 182 days
-  - Tuberculosis: 240 days
+Your employer pays the compensation from the 4th to the 8th day of sick-leave. The Estonian
+Health Insurance Fund pays from the 9th day. The compensation rate is 70% of your monthly
+gross income.
+The maximum duration of one insurance event is 182 days, unless it’s tuberculosis. For
+tuberculosis it is up to 240 days.
 
-## Usage
+Story
 
-1. Enter your monthly gross income (in €)
-2. Enter the total number of sick-leave days
-3. Check the "I have tuberculosis" checkbox if applicable
-4. Click "Calculate" to see the results
+As a user, I want to calculate my sick-leave health insurance compensation so that I can
+double check my compensation sum.
+
+Acceptance criteria
+
+• I can enter my monthly gross income
+• I can enter my total days of sick-leave
+• I can specify that I have tubercolosis
+• I can see how much will my employer compensate me
+• I can see how many days my employer has to compensate
+• I can see how much will Health Insurance compensate me
+• I can see how many days Health Insurance has to compensate
+• I can see how much my compensation total will be
+
 
 ## Technologies
 
@@ -33,7 +37,5 @@ A web application for calculating sick-leave health insurance compensation in Es
 - CSS3 (Responsive Design)
 - Vanilla JavaScript (ES6+)
 
-## Browser Support
 
-Modern browsers (Chrome, Firefox, Safari, Edge)
 
