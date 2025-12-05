@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compensation Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <article class="content">
+      <h1>Quam Tristique Condimentum</h1>
+      <p>
+        Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        <span class="highlight">Curabitur blandit</span> tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+        Vestibulum id ligula porta felis euismod semper.
+      </p>
+
+      <section class="image-with-heading">
+        <div class="heading-text">
+          <h2>Fringilla Euismod Adipiscing Ipsum</h2>
+          <p>
+            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed.
+          </p>
+          <ul>
+            <li>Tellus Ullamcorper Inceptos</li>
+            <li>Magna Condimentum
+              <ul>
+                <li>Mattis Tristique</li>
+                <li>Pharetra Pellentesque Dapibus</li>
+              </ul>
+            </li>
+            <li>Aenean Inceptos</li>
+            <li>Parturient Bibendum</li>
+          </ul>
+        </div>
+        <img src="images.png" alt="Illustration related to compensation and benefits" class="content-image" />
+      </section>
+    </article>
+
+    <aside class="calculator">
+        <h1>Compensation Calculator</h1>
+      
+        <form id="compensationForm" novalidate>
+          <fieldset class="form-group">
+            <label for="income">Average income</label>
+            <div class="input-with-unit">
+              <input 
+                type="number" 
+                id="income" 
+                name="income"
+                placeholder="0" 
+                min="0" 
+                step="0.01"
+                required
+                aria-describedby="incomeError"
+                aria-invalid="false"
+              />
+              <span>€</span>
+            </div>
+            <span class="error-message" id="incomeError" role="alert"></span>
+          </fieldset>
+      
+          <fieldset class="form-group">
+            <label for="days">Days on sick-leave</label>
+            <div class="input-with-unit">
+              <input 
+                type="number" 
+                id="days" 
+                name="days"
+                placeholder="0" 
+                min="1" 
+                max="240"
+                step="1"
+                required
+                aria-describedby="daysError"
+                aria-invalid="false"
+              />
+              <span>days</span>
+            </div>
+            <span class="error-message" id="daysError" role="alert"></span>
+          </fieldset>
+      
+          <fieldset class="form-group checkbox-wrapper">
+            <input 
+              type="checkbox" 
+              id="tuberculosis" 
+              name="tuberculosis"
+            />
+            <label for="tuberculosis">I have tuberculosis</label>
+          </fieldset>
+      
+          <button type="submit" id="calculate">Calculate</button>
+        </form>
+      
+        <hr class="divider" />
+      
+        <section id="results" class="results" aria-live="polite">
+          <article>
+            <h2 class="sr-only">Employer Compensation</h2>
+            <p>The employer compensates</p>
+            <p class="compensated-days" id="employerDays">0 days</p>
+            <p><strong id="employerAmount">0.00€</strong></p>
+            <p class="daily-allowance-label">Daily allowance <span id="employerDaily">0.00€</span></p>
+          </article>
+      
+          <article>
+            <h2 class="sr-only">Health Insurance Compensation</h2>
+            <p>Health Insurance compensates:</p>
+            <p class="compensated-days" id="insuranceDays">0 days</p>
+            <p><strong id="insuranceAmount">0.00€</strong></p>
+            <p class="daily-allowance-label">Daily allowance <span id="insuranceDaily">0.00€</span></p>
+          </article>
+        </section>
+      
+        <hr class="divider" />
+      
+        <section id="results-total" class="results-total" aria-live="polite">
+          <p>Compensation total for <span id="totalDays">0</span> days (net):</p>
+          <p id="totalAmount">0.00€</p>
+        </section>
+      </aside> 
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
